@@ -22,7 +22,7 @@ public class JwtService {
     private long expiration;
 
     public String generateToken(User user) {
-        return Jwtsbuilder()
+        return Jwts.builder()
                 .setSubject(user.getEmail())
                 .claim("role", user.getRole().name())
                 .setIssuedAt(new Date())
